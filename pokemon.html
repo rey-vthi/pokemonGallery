@@ -1,0 +1,1750 @@
+<html>
+  <head>
+    <title>pokemonCards</title>
+    <style>
+      .pokemonContainer {
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin-bottom: auto;
+        background: #f5f5f5;
+      }
+      .pokemon:hover {
+        transform: rotateY(180deg);
+      }
+
+      .pokemon {
+        width: 300px;
+        height: 350px;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        margin:20px 20px 20px 20px;
+        
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 300px;
+        height: 350px;
+      }
+
+      .flip-card-front {
+        backface-visibility: hidden;
+      }
+      .flip-card-back {
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        text-align: justify;
+        padding:10px 10px 10px 10px;
+        background: #f5f5f5;
+        border: 1px solid gray;
+        border-radius: 10px;
+        margin-bottom: auto;
+        box-shadow: 10px;
+        line-height: 20px;
+      }
+
+      .pokemonImage {
+        width: 200px;
+        height: 200px;
+      }
+
+      .pokemonsCards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+      }
+    </style>
+    <script>
+      const isTargetedPokemon = function(pokemon) {
+        const existingPokemonName = pokemon.attributes['id']['value'].toLowerCase();
+        const usrTargetName = document.getElementById('pokemon').value.toLowerCase();
+        return existingPokemonName === usrTargetName;
+      }
+
+     const searchTool = function() {
+       const allPokemons = document.getElementsByClassName('pokemon');
+       const pokemonInList = Array.from(allPokemons);
+       pokemonInList.forEach((e)=> e.style.display='none');
+       const thisType = pokemonInList.filter(isTargetedPokemon);
+       Array.from(thisType).forEach((e)=>e.style.display='block');
+     }
+
+    </script>
+  </head>
+  <body>
+    <div style="text-align: center;">
+      <img src="./pokemonLogo.jpeg" alt="notFound" />
+    </div>
+    <div style="text-align: center;">
+        <input type='search' id='pokemon' value="">
+        <input type="submit" onclick='searchTool()' value="search">
+    </div>
+    <br />
+    <div class="pokemonsCards" id='allPokemons'>
+      <div class="pokemon" id='Bulbasaur'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Bulbasaur</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/001.png" alt="NotFound"/> 
+         <p>National id: 1</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723880a20c9db3bc31c2</p></ br>
+           <p style='padding:3px'>Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.  Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Ivysaur'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Ivysaur</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/002.png" alt="NotFound"/> 
+         <p>National id: 2</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723980a20c9db3bc31e3</p></ br>
+           <p style='padding:3px'>There is a bud on this Pokémon's back. To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.  There is a bud on this Pokémon's back. To support its weight, Ivysaur's legs and trunk grow thick and strong. If it starts spending more time lying in the sunlight, it's a sign that the bud will bloom into a large flower soon.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Venusaur'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Venusaur</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/003.png" alt="NotFound"/> 
+         <p>National id: 3</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723880a20c9db3bc31cc</p></ br>
+           <p style='padding:3px'>There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.  There is a large flower on Venusaur's back. The flower is said to take on vivid colors if it gets plenty of nutrition and sunlight. The flower's aroma soothes the emotions of people.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Charmander'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Charmander</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/004.png" alt="NotFound"/> 
+         <p>National id: 4</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723880a20c9db3bc31c8</p></ br>
+           <p style='padding:3px'>The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.  The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Charmeleon'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Charmeleon</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/005.png" alt="NotFound"/> 
+         <p>National id: 5</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723980a20c9db3bc31e8</p></ br>
+           <p style='padding:3px'>Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.  Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Charizard'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Charizard</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/006.png" alt="NotFound"/> 
+         <p>National id: 6</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723880a20c9db3bc31d1</p></ br>
+           <p style='padding:3px'>Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.  Charizard flies around the sky in search of powerful opponents. It breathes fire of such great heat that it melts anything. However, it never turns its fiery breath on any opponent weaker than itself.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Squirtle'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Squirtle</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/007.png" alt="NotFound"/> 
+         <p>National id: 7</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723980a20c9db3bc31d7</p></ br>
+           <p style='padding:3px'>Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.  Squirtle's shell is not merely used for protection. The shell's rounded shape and the grooves on its surface help minimize resistance in water, enabling this Pokémon to swim at high speeds.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Wartortle'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Wartortle</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/008.png" alt="NotFound"/> 
+         <p>National id: 8</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723980a20c9db3bc31df</p></ br>
+           <p style='padding:3px'>Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.  Its tail is large and covered with a rich, thick fur. The tail becomes increasingly deeper in color as Wartortle ages. The scratches on its shell are evidence of this Pokémon's toughness as a battler.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Blastoise'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Blastoise</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/009.png" alt="NotFound"/> 
+         <p>National id: 9</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a723980a20c9db3bc31db</p></ br>
+           <p style='padding:3px'>Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.  Blastoise has water spouts that protrude from its shell. The water spouts are very accurate. They can shoot bullets of water with enough accuracy to strike empty cans from a distance of over 160 feet.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Caterpie'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Caterpie</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/008.png" alt="NotFound"/> 
+         <p>National id: 10</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41edda6</p></ br>
+           <p style='padding:3px'>Caterpie has a voracious appetite. It can devour leaves bigger than its body right before your eyes. From its antenna, this Pokémon releases a terrifically strong odor.  Caterpie has a voracious appetite. It can devour leaves bigger than its body right before your eyes. From its antenna, this Pokémon releases a terrifically strong odor.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Metapod'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Metapod</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/011.png" alt="NotFound"/> 
+         <p>National id: 11</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41eddfa</p></ br>
+           <p style='padding:3px'>The shell covering this Pokémon's body is as hard as an iron slab. Metapod does not move very much. It stays still because it is preparing its soft innards for evolution inside the hard shell.  The shell covering this Pokémon's body is as hard as an iron slab. Metapod does not move very much. It stays still because it is preparing its soft innards for evolution inside the hard shell.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Butterfree'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Butterfree</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/012.png" alt="NotFound"/> 
+         <p>National id: 12</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41eddbf</p></ br>
+           <p style='padding:3px'>Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest.  Butterfree has a superior ability to search for delicious honey from flowers. It can even search out, extract, and carry honey from flowers that are blooming over six miles from its nest.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Weedle'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Weedle</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/013.png" alt="NotFound"/> 
+         <p>National id: 13</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72a97276d341b41edd99</p></ br>
+           <p style='padding:3px'>Weedle has an extremely acute sense of smell. It is capable of distinguishing its favorite kinds of leaves from those it dislikes just by sniffing with its big red proboscis (nose).  Weedle has an extremely acute sense of smell. It is capable of distinguishing its favorite kinds of leaves from those it dislikes just by sniffing with its big red proboscis (nose).</p>
+       </div>
+     </div>
+<div class="pokemon" id='Kakuna'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Kakuna</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/014.png" alt="NotFound"/> 
+         <p>National id: 14</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41edde8</p></ br>
+           <p style='padding:3px'>Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution. This is evident from how hot the shell becomes to the touch.  Kakuna remains virtually immobile as it clings to a tree. However, on the inside, it is extremely busy as it prepares for its coming evolution. This is evident from how hot the shell becomes to the touch.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Beedrill'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Beedrill</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/015.png" alt="NotFound"/> 
+         <p>National id: 15</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72a97276d341b41edd9e</p></ br>
+           <p style='padding:3px'>Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm.  Beedrill is extremely territorial. No one should ever approach its nest—this is for their own safety. If angered, they will attack in a furious swarm.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Pidgey'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Pidgey</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/016.png" alt="NotFound"/> 
+         <p>National id: 16</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72a97276d341b41edd91</p></ br>
+           <p style='padding:3px'>Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings.  Pidgey has an extremely sharp sense of direction. It is capable of unerringly returning home to its nest, however far it may be removed from its familiar surroundings.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Pidgeotto'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Pidgeotto</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/017.png" alt="NotFound"/> 
+         <p>National id: 17</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41edded</p></ br>
+           <p style='padding:3px'>Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.  Pidgeotto claims a large area as its own territory. This Pokémon flies around, patrolling its living space. If its territory is violated, it shows no mercy in thoroughly punishing the foe with its sharp claws.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Pidgeot'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Pidgeot</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/018.png" alt="NotFound"/> 
+         <p>National id: 18</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41eddaa</p></ br>
+           <p style='padding:3px'>This Pokémon has a dazzling plumage of beautifully glossy feathers. Many Trainers are captivated by the striking beauty of the feathers on its head, compelling them to choose Pidgeot as their Pokémon.  This Pokémon has a dazzling plumage of beautifully glossy feathers. Many Trainers are captivated by the striking beauty of the feathers on its head, compelling them to choose Pidgeot as their Pokémon.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Rattata'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Rattata</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/019.png" alt="NotFound"/> 
+         <p>National id: 19</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ab7276d341b41eddc9</p></ br>
+           <p style='padding:3px'>Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.  Rattata is cautious in the extreme. Even while it is asleep, it constantly listens by moving its ears around. It is not picky about where it lives—it will make its nest anywhere.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Raticate'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Raticate</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/020.png" alt="NotFound"/> 
+         <p>National id: 20</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72a97276d341b41edd96</p></ br>
+           <p style='padding:3px'>Raticate's sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.  Raticate's sturdy fangs grow steadily. To keep them ground down, it gnaws on rocks and logs. It may even chew on the walls of houses.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Spearow'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Spearow</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/021.png" alt="NotFound"/> 
+         <p>National id: 21</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41eddba</p></ br>
+           <p style='padding:3px'>Spearow has a very loud cry that can be heard over half a mile away. If its high, keening cry is heard echoing all around, it is a sign that they are warning each other of danger.  Spearow has a very loud cry that can be heard over half a mile away. If its high, keening cry is heard echoing all around, it is a sign that they are warning each other of danger.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Fearow'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Fearow</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/022.png" alt="NotFound"/> 
+         <p>National id: 22</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41eddae</p></ br>
+           <p style='padding:3px'>Fearow is recognized by its long neck and elongated beak. They are conveniently shaped for catching prey in soil or water. It deftly moves its long and skinny beak to pluck prey.  Fearow is recognized by its long neck and elongated beak. They are conveniently shaped for catching prey in soil or water. It deftly moves its long and skinny beak to pluck prey.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Ekans'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Ekans</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/023.png" alt="NotFound"/> 
+         <p>National id: 23</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41eddb6</p></ br>
+           <p style='padding:3px'>Ekans curls itself up in a spiral while it rests. Assuming this position allows it to quickly respond to a threat from any direction with a glare from its upraised head.  Ekans curls itself up in a spiral while it rests. Assuming this position allows it to quickly respond to a threat from any direction with a glare from its upraised head.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Arbok'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Arbok</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/024.png" alt="NotFound"/> 
+         <p>National id: 24</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41edddc</p></ br>
+           <p style='padding:3px'>This Pokémon is terrifically strong in order to constrict things with its body. It can even flatten steel oil drums. Once Arbok wraps its body around its foe, escaping its crunching embrace is impossible.  This Pokémon is terrifically strong in order to constrict things with its body. It can even flatten steel oil drums. Once Arbok wraps its body around its foe, escaping its crunching embrace is impossible.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Pikachu'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Pikachu</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="NotFound"/> 
+         <p>National id: 25</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72a97276d341b41edda2</p></ br>
+           <p style='padding:3px'>This Pokémon has electricity-storing pouches on its cheeks. These appear to become electrically charged during the night while Pikachu sleeps. It occasionally discharges electricity when it is dozy after waking up.  Whenever Pikachu comes across something new, it blasts it with a jolt of electricity. If you come across a blackened berry, it's evidence that this Pokémon mistook the intensity of its charge.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Raichu'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Raichu</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/026.png" alt="NotFound"/> 
+         <p>National id: 26</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ab7276d341b41eddc6</p></ br>
+           <p style='padding:3px'>This Pokémon exudes a weak electrical charge from all over its body that makes it take on a slight glow in darkness. Raichu plants its tail in the ground to discharge electricity.  If the electrical sacs become excessively charged, Raichu plants its tail in the ground and discharges. Scorched patches of ground will be found near this Pokémon's nest.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Sandshrew'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Sandshrew</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/027.png" alt="NotFound"/> 
+         <p>National id: 27</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41eddf2</p></ br>
+           <p style='padding:3px'>Sandshrew has a very dry hide that is extremely tough. The Pokémon can roll into a ball that repels any attack. At night, it burrows into the desert sand to sleep.  Sandshrew's body is configured to absorb water without waste, enabling it to survive in an arid desert. This Pokémon curls up to protect itself from its enemies.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Sandslash'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Sandslash</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/028.png" alt="NotFound"/> 
+         <p>National id: 28</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41edde5</p></ br>
+           <p style='padding:3px'>Sandslash can roll up its body as if it were a ball covered with large spikes. In battle, this Pokémon will try to make the foe flinch by jabbing it with its spines. It then leaps at the stunned foe to tear wildly with its sharp claws.  Sandslash's body is covered by tough spikes, which are hardened sections of its hide. Once a year, the old spikes fall out, to be replaced with new spikes that grow out from beneath the old ones.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Nidoran-f'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Nidoran-f</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/029.png" alt="NotFound"/> 
+         <p>National id: 29</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41eddd8</p></ br>
+           <p style='padding:3px'>Nidoran has barbs that secrete a powerful poison. They are thought to have developed as protection for this small-bodied Pokémon. When enraged, it releases a horrible toxin from its horn.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Nidorina'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Nidorina</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/030.png" alt="NotFound"/> 
+         <p>National id: 30</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d07276d341b41ee1f0</p></ br>
+           <p style='padding:3px'>When Nidorina are with their friends or family, they keep their barbs tucked away to prevent hurting each other. This Pokémon appears to become nervous if separated from the others.  When Nidorina are with their friends or family, they keep their barbs tucked away to prevent hurting each other. This Pokémon appears to become nervous if separated from the others.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Nidoqueen'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Nidoqueen</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/031.png" alt="NotFound"/> 
+         <p>National id: 31</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72aa7276d341b41eddb2</p></ br>
+           <p style='padding:3px'>Nidoqueen's body is encased in extremely hard scales. It is adept at sending foes flying with harsh tackles. This Pokémon is at its strongest when it is defending its young.  Nidoqueen's body is encased in extremely hard scales. It is adept at sending foes flying with harsh tackles. This Pokémon is at its strongest when it is defending its young.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Nidoran-m'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Nidoran-m</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/032.png" alt="NotFound"/> 
+         <p>National id: 32</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41eddfe</p></ br>
+           <p style='padding:3px'>Nidoran has developed muscles for moving its ears. Thanks to them, the ears can be freely moved in any direction. Even the slightest sound does not escape this Pokémon's notice.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Nidorino'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Nidorino</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/033.png" alt="NotFound"/> 
+         <p>National id: 33</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41ede12</p></ br>
+           <p style='padding:3px'>Nidorino has a horn that is harder than a diamond. If it senses a hostile presence, all the barbs on its back bristle up at once, and it challenges the foe with all its might.  Nidorino has a horn that is harder than a diamond. If it senses a hostile presence, all the barbs on its back bristle up at once, and it challenges the foe with all its might.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Nidoking'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Nidoking</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/034.png" alt="NotFound"/> 
+         <p>National id: 34</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ab7276d341b41eddcd</p></ br>
+           <p style='padding:3px'>Nidoking's thick tail packs enormously destructive power. With one swing, it can topple a metal transmission tower. Once this Pokémon goes on a rampage, there is no stopping it.  Nidoking's thick tail packs enormously destructive power. With one swing, it can topple a metal transmission tower. Once this Pokémon goes on a rampage, there is no stopping it.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Clefairy'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Clefairy</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/035.png" alt="NotFound"/> 
+         <p>National id: 35</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ab7276d341b41eddd4</p></ br>
+           <p style='padding:3px'>On every night of a full moon, groups of this Pokémon come out to play. When dawn arrives, the tired Clefairy return to their quiet mountain retreats and go to sleep nestled up against each other.  On every night of a full moon, groups of this Pokémon come out to play. When dawn arrives, the tired Clefairy return to their quiet mountain retreats and go to sleep nestled up against each other.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Clefable'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Clefable</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/036.png" alt="NotFound"/> 
+         <p>National id: 36</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ab7276d341b41eddd1</p></ br>
+           <p style='padding:3px'>Clefable moves by skipping lightly as if it were flying using its wings. Its bouncy step lets it even walk on water. It is known to take strolls on lakes on quiet, moonlit nights.  Clefable moves by skipping lightly as if it were flying using its wings. Its bouncy step lets it even walk on water. It is known to take strolls on lakes on quiet, moonlit nights.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Vulpix'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Vulpix</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/037.png" alt="NotFound"/> 
+         <p>National id: 37</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ae7276d341b41ede2d</p></ br>
+           <p style='padding:3px'>Inside Vulpix's body burns a flame that never goes out. During the daytime, when the temperatures rise, this Pokémon releases flames from its mouth to prevent its body from growing too hot.  At the time of its birth, Vulpix has one white tail. The tail separates into six if this Pokémon receives plenty of love from its Trainer. The six tails become magnificently curled.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Ninetales'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Ninetales</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/038.png" alt="NotFound"/> 
+         <p>National id: 38</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ab7276d341b41eddc3</p></ br>
+           <p style='padding:3px'>Legend has it that Ninetales came into being when nine wizards possessing sacred powers merged into one. This Pokémon is highly intelligent—it can understand human speech.  Ninetales casts a sinister light from its bright red eyes to gain total control over its foe's mind. This Pokémon is said to live for a thousand years.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Jigglypuff'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Jigglypuff</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/039.png" alt="NotFound"/> 
+         <p>National id: 39</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b07276d341b41ede4b</p></ br>
+           <p style='padding:3px'>When this Pokémon sings, it never pauses to breathe. If it is in a battle against an opponent that does not easily fall asleep, Jigglypuff cannot breathe, endangering its life.  Jigglypuff's vocal cords can freely adjust the wavelength of its voice. This Pokémon uses this ability to sing at precisely the right wavelength to make its foes most drowsy.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Wigglytuff'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Wigglytuff</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/040.png" alt="NotFound"/> 
+         <p>National id: 40</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41eddf6</p></ br>
+           <p style='padding:3px'>Wigglytuff's body is very flexible. By inhaling deeply, this Pokémon can inflate itself seemingly without end. Once inflated, Wigglytuff bounces along lightly like a balloon.  Wigglytuff has large, saucerlike eyes. The surfaces of its eyes are always covered with a thin layer of tears. If any dust gets in this Pokémon's eyes, it is quickly washed away.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Zubat'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Zubat</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/041.png" alt="NotFound"/> 
+         <p>National id: 41</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede82</p></ br>
+           <p style='padding:3px'>Zubat avoids sunlight because exposure causes it to become unhealthy. During the daytime, it stays in caves or under the eaves of old houses, sleeping while hanging upside down.  Zubat remains quietly unmoving in a dark spot during the bright daylight hours. It does so because prolonged exposure to the sun causes its body to become slightly burned.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Golbat'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Golbat</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/042.png" alt="NotFound"/> 
+         <p>National id: 42</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ae7276d341b41ede28</p></ br>
+           <p style='padding:3px'>Golbat bites down on prey with its four fangs and drinks the victim's blood. It becomes active on inky dark moonless nights, flying around to attack people and Pokémon.  Golbat loves to drink the blood of living things. It is particularly active in the pitch black of night. This Pokémon flits around in the night skies, seeking fresh blood.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Oddish'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Oddish</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/043.png" alt="NotFound"/> 
+         <p>National id: 43</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41ede16</p></ br>
+           <p style='padding:3px'>Oddish searches for fertile, nutrient-rich soil, then plants itself. During the daytime, while it is planted, this Pokémon's feet are thought to change shape and become similar to the roots of trees.  During the daytime, Oddish buries itself in soil to absorb nutrients from the ground using its entire body. The more fertile the soil, the glossier its leaves become.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Gloom'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Gloom</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/044.png" alt="NotFound"/> 
+         <p>National id: 44</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ac7276d341b41edddf</p></ br>
+           <p style='padding:3px'>From its mouth Gloom drips honey that smells absolutely horrible. Apparently, it loves the horrid stench. It sniffs the noxious fumes and then drools even more of its honey.  Gloom releases a foul fragrance from the pistil of its flower. When faced with danger, the stench worsens. If this Pokémon is feeling calm and secure, it does not release its usual stinky aroma.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Vileplume'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Vileplume</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/045.png" alt="NotFound"/> 
+         <p>National id: 45</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41ede02</p></ br>
+           <p style='padding:3px'>Vileplume has the world's largest petals. They are used to attract prey that are then doused with toxic spores. Once the prey are immobilized, this Pokémon catches and devours them.  Vileplume's toxic pollen triggers atrocious allergy attacks. That's why it is advisable never to approach any attractive flowers in a jungle, however pretty they may be.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Paras'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Paras</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/046.png" alt="NotFound"/> 
+         <p>National id: 46</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ae7276d341b41ede23</p></ br>
+           <p style='padding:3px'>Paras has parasitic mushrooms growing on its back called tochukaso. They grow large by drawing nutrients from this Bug Pokémon host. They are highly valued as a medicine for extending life.  Paras has parasitic mushrooms growing on its back called tochukaso. They grow large by drawing nutrients from this Bug Pokémon host. They are highly valued as a medicine for extending life.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Parasect'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Parasect</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/047.png" alt="NotFound"/> 
+         <p>National id: 47</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72af7276d341b41ede44</p></ br>
+           <p style='padding:3px'>Parasect is known to infest large trees en masse and drain nutrients from the lower trunk and roots. When an infested tree dies, they move onto another tree all at once.  Parasect is known to infest large trees en masse and drain nutrients from the lower trunk and roots. When an infested tree dies, they move onto another tree all at once.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Venonat'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Venonat</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/048.png" alt="NotFound"/> 
+         <p>National id: 48</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41ede06</p></ br>
+           <p style='padding:3px'>Venonat is said to have evolved with a coat of thin, stiff hair that covers its entire body for protection. It possesses large eyes that never fail to spot even minuscule prey.  Venonat is said to have evolved with a coat of thin, stiff hair that covers its entire body for protection. It possesses large eyes that never fail to spot even minuscule prey.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Venomoth'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Venomoth</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/049.png" alt="NotFound"/> 
+         <p>National id: 49</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b07276d341b41ede5b</p></ br>
+           <p style='padding:3px'>Venomoth is nocturnal—it is a Pokémon that only becomes active at night. Its favorite prey are small insects that gather around streetlights, attracted by the light in the darkness.  Venomoth is nocturnal—it is a Pokémon that only becomes active at night. Its favorite prey are small insects that gather around streetlights, attracted by the light in the darkness.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Diglett'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Diglett</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/050.png" alt="NotFound"/> 
+         <p>National id: 50</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41ede0e</p></ br>
+               <p style='padding:3px'>Diglett are raised in most farms. The reason is simple— wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.  Diglett are raised in most farms. The reason is simple— wherever this Pokémon burrows, the soil is left perfectly tilled for planting crops. This soil is made ideal for growing delicious vegetables.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Dugtrio'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Dugtrio</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/051.png" alt="NotFound"/> 
+         <p>National id: 51</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72af7276d341b41ede48</p></ br>
+           <p style='padding:3px'>Dugtrio are actually triplets that emerged from one body. As a result, each triplet thinks exactly like the other two triplets. They work cooperatively to burrow endlessly.  Dugtrio are actually triplets that emerged from one body. As a result, each triplet thinks exactly like the other two triplets. They work cooperatively to burrow endlessly.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Meowth'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Meowth</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/052.png" alt="NotFound"/> 
+         <p>National id: 52</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ae7276d341b41ede31</p></ br>
+           <p style='padding:3px'>Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.  Meowth withdraws its sharp claws into its paws to slinkily sneak about without making any incriminating footsteps. For some reason, this Pokémon loves shiny coins that glitter with light.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Persian'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Persian</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/053.png" alt="NotFound"/> 
+         <p>National id: 53</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b07276d341b41ede5f</p></ br>
+           <p style='padding:3px'>Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.  Persian has six bold whiskers that give it a look of toughness. The whiskers sense air movements to determine what is in the Pokémon's surrounding vicinity. It becomes docile if grabbed by the whiskers.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Psyduck'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Psyduck</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/054.png" alt="NotFound"/> 
+         <p>National id: 54</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b07276d341b41ede57</p></ br>
+           <p style='padding:3px'>If it uses its mysterious power, Psyduck can't remember having done so. It apparently can't form a memory of such an event because it goes into an altered state that is much like deep sleep.  Psyduck uses a mysterious power. When it does so, this Pokémon generates brain waves that are supposedly only seen in sleepers. This discovery spurred controversy among scholars.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Golduck'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Golduck</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/055.png" alt="NotFound"/> 
+         <p>National id: 55</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ad7276d341b41ede0b</p></ br>
+           <p style='padding:3px'>Golduck is the fastest swimmer among all Pokémon. It swims effortlessly, even in a rough, stormy sea. It sometimes rescues people from wrecked ships floundering in high seas.  The webbed flippers on its forelegs and hind legs and the streamlined body of Golduck give it frightening speed. This Pokémon is definitely much faster than even the most athletic swimmer.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Mankey'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Mankey</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/056.png" alt="NotFound"/> 
+         <p>National id: 56</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d17276d341b41ee20a</p></ br>
+           <p style='padding:3px'>When Mankey starts shaking and its nasal breathing turns rough, it's a sure sign that it is becoming angry. However, because it goes into a towering rage almost instantly, it is impossible for anyone to flee its wrath.  When Mankey starts shaking and its nasal breathing turns rough, it's a sure sign that it is becoming angry. However, because it goes into a towering rage almost instantly, it is impossible for anyone to flee its wrath.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Primeape'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Primeape</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/057.png" alt="NotFound"/> 
+         <p>National id: 57</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72af7276d341b41ede3d</p></ br>
+           <p style='padding:3px'>When Primeape becomes furious, its blood circulation is boosted. In turn, its muscles are made even stronger. However, it also becomes much less intelligent at the same time.  When Primeape becomes furious, its blood circulation is boosted. In turn, its muscles are made even stronger. However, it also becomes much less intelligent at the same time.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Growlithe'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Growlithe</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/058.png" alt="NotFound"/> 
+         <p>National id: 58</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ae7276d341b41ede1b</p></ br>
+           <p style='padding:3px'>Growlithe has a superb sense of smell. Once it smells anything, this Pokémon won't forget the scent, no matter what. It uses its advanced olfactory sense to determine the emotions of other living things.  Growlithe has a superb sense of smell. Once it smells anything, this Pokémon won't forget the scent, no matter what. It uses its advanced olfactory sense to determine the emotions of other living things.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Arcanine'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Arcanine</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/059.png" alt="NotFound"/> 
+         <p>National id: 59</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72af7276d341b41ede3a</p></ br>
+           <p style='padding:3px'>Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.  Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Poliwag'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Poliwag</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/060.png" alt="NotFound"/> 
+         <p>National id: 60</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ae7276d341b41ede1f</p></ br>
+           <p style='padding:3px'>Poliwag has a very thin skin. It is possible to see the Pokémon's spiral innards right through the skin. Despite its thinness, however, the skin is also very flexible. Even sharp fangs bounce right off it.  Poliwag has a very thin skin. It is possible to see the Pokémon's spiral innards right through the skin. Despite its thinness, however, the skin is also very flexible. Even sharp fangs bounce right off it.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Poliwhirl'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Poliwhirl</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/061.png" alt="NotFound"/> 
+         <p>National id: 61</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72af7276d341b41ede35</p></ br>
+           <p style='padding:3px'>The surface of Poliwhirl's body is always wet and slick with a slimy fluid. Because of this slippery covering, it can easily slip and slide out of the clutches of any enemy in battle.  The surface of Poliwhirl's body is always wet and slick with a slimy fluid. Because of this slippery covering, it can easily slip and slide out of the clutches of any enemy in battle.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Poliwrath'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Poliwrath</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/062.png" alt="NotFound"/> 
+         <p>National id: 62</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d17276d341b41ee201</p></ br>
+           <p style='padding:3px'>Poliwrath's highly developed, brawny muscles never grow fatigued, however much it exercises. It is so tirelessly strong, this Pokémon can swim back and forth across the ocean without effort.  Poliwrath's highly developed, brawny muscles never grow fatigued, however much it exercises. It is so tirelessly strong, this Pokémon can swim back and forth across the ocean without effort.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Abra'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Abra</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/063.png" alt="NotFound"/> 
+         <p>National id: 63</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d17276d341b41ee212</p></ br>
+           <p style='padding:3px'>Abra needs to sleep for eighteen hours a day. If it doesn't, this Pokémon loses its ability to use telekinetic powers. If it is attacked, Abra escapes using Teleport while it is still sleeping.  Abra sleeps for eighteen hours a day. However, it can sense the presence of foes even while it is sleeping. In such a situation, this Pokémon immediately teleports to safety.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Kadabra'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Kadabra</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/064.png" alt="NotFound"/> 
+         <p>National id: 64</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72cf7276d341b41ee1bf</p></ br>
+           <p style='padding:3px'>Kadabra holds a silver spoon in its hand. The spoon is used to amplify the alpha waves in its brain. Without the spoon, the Pokémon is said to be limited to half the usual amount of its telekinetic powers.  Kadabra emits a peculiar alpha wave if it develops a headache. Only those people with a particularly strong psyche can hope to become a Trainer of this Pokémon.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Alakazam'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Alakazam</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/065.png" alt="NotFound"/> 
+         <p>National id: 65</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d07276d341b41ee1de</p></ br>
+           <p style='padding:3px'>Alakazam's brain continually grows, infinitely multiplying brain cells. This amazing brain gives this Pokémon an astoundingly high IQ of 5,000. It has a thorough memory of everything that has occurred in the world.  Alakazam's brain continually grows, making its head far too heavy to support with its neck. This Pokémon holds its head up using its psychokinetic power instead.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Machop'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Machop</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/066.png" alt="NotFound"/> 
+         <p>National id: 66</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d07276d341b41ee1f9</p></ br>
+           <p style='padding:3px'>Machop exercises by hefting around a Graveler as if it were a barbell. There are some Machop that travel the world in a quest to master all kinds of martial arts.  Machop's muscles are special—they never get sore no matter how much they are used in exercise. This Pokémon has sufficient power to hurl a hundred adult humans.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Machoke'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Machoke</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/067.png" alt="NotFound"/> 
+         <p>National id: 67</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b07276d341b41ede50</p></ br>
+           <p style='padding:3px'>Machoke undertakes bodybuilding every day even as it helps people with tough, physically demanding labor. On its days off, this Pokémon heads to the fields and mountains to exercise and train.  Machoke's thoroughly toned muscles possess the hardness of steel. This Pokémon has so much strength, it can easily hold aloft a sumo wrestler on just one finger.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Machamp'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Machamp</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/068.png" alt="NotFound"/> 
+         <p>National id: 68</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b07276d341b41ede54</p></ br>
+           <p style='padding:3px'>Machamp is known as the Pokémon that has mastered every kind of martial arts. If it grabs hold of the foe with its four arms, the battle is all but over. The hapless foe is thrown far over the horizon.  Machamp has the power to hurl anything aside. However, trying to do any work requiring care and dexterity causes its arms to get tangled. This Pokémon tends to leap into action before it thinks.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Bellsprout'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Bellsprout</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/069.png" alt="NotFound"/> 
+         <p>National id: 69</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d07276d341b41ee1f4</p></ br>
+           <p style='padding:3px'>Bellsprout's thin and flexible body lets it bend and sway to avoid any attack, however strong it may be. From its mouth, this Pokémon spits a corrosive fluid that melts even iron.  Bellsprout's thin and flexible body lets it bend and sway to avoid any attack, however strong it may be. From its mouth, this Pokémon spits a corrosive fluid that melts even iron.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Weepinbell'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Weepinbell</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/070.png" alt="NotFound"/> 
+         <p>National id: 70</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72cf7276d341b41ee1d4</p></ br>
+           <p style='padding:3px'>Weepinbell has a large hook on its rear end. At night, the Pokémon hooks on to a tree branch and goes to sleep. If it moves around in its sleep, it may wake up to find itself on the ground.  Weepinbell has a large hook on its rear end. At night, the Pokémon hooks on to a tree branch and goes to sleep. If it moves around in its sleep, it may wake up to find itself on the ground.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Victreebel'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Victreebel</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/071.png" alt="NotFound"/> 
+         <p>National id: 71</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72af7276d341b41ede40</p></ br>
+           <p style='padding:3px'>Victreebel has a long vine that extends from its head. This vine is waved and flicked about as if it were an animal to attract prey. When an unsuspecting prey draws near, this Pokémon swallows it whole.  Victreebel has a long vine that extends from its head. This vine is waved and flicked about as if it were an animal to attract prey. When an unsuspecting prey draws near, this Pokémon swallows it whole.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Tentacool'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Tentacool</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/072.png" alt="NotFound"/> 
+         <p>National id: 72</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72c07276d341b41ee007</p></ br>
+           <p style='padding:3px'>Tentacool absorbs sunlight and refracts it using water inside its body to convert it into beam energy. This Pokémon shoots beams from the small round organ above its eyes.  Tentacool's body is largely composed of water. If it is removed from the sea, it dries up like parchment. If this Pokémon happens to become dehydrated, put it back into the sea.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Tentacruel'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Tentacruel</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/073.png" alt="NotFound"/> 
+         <p>National id: 73</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d17276d341b41ee20e</p></ br>
+           <p style='padding:3px'>Tentacruel has tentacles that can be freely elongated and shortened at will. It ensnares prey with its tentacles and weakens the prey by dosing it with a harsh toxin. It can catch up to 80 prey at the same time.  Tentacruel has large red orbs on its head. The orbs glow before lashing the vicinity with a harsh ultrasonic blast. This Pokémon's outburst creates rough waves around it.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Geodude'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Geodude</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/074.png" alt="NotFound"/> 
+         <p>National id: 74</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d17276d341b41ee205</p></ br>
+           <p style='padding:3px'>When Geodude sleeps deeply, it buries itself halfway into the ground. It will not awaken even if hikers step on it unwittingly. In the morning, this Pokémon rolls downhill in search of food.  The longer a Geodude lives, the more its edges are chipped and worn away, making it more rounded in appearance. However, this Pokémon's heart will remain hard, craggy, and rough always.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Graveler'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Graveler</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/075.png" alt="NotFound"/> 
+         <p>National id: 75</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b17276d341b41ede6a</p></ br>
+           <p style='padding:3px'>Rocks are Graveler's favorite food. This Pokémon will climb a mountain from the base to the summit, crunchingly feasting on rocks all the while. Upon reaching the peak, it rolls back down to the bottom.  Graveler grows by feeding on rocks. Apparently, it prefers to eat rocks that are covered in moss. This Pokémon eats its way through a ton of rocks on a daily basis.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Golem'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Golem</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/076.png" alt="NotFound"/> 
+         <p>National id: 76</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b17276d341b41ede73</p></ br>
+           <p style='padding:3px'>Golem is known for rolling down from mountains. To prevent them from rolling into the homes of people downhill, grooves have been dug into the sides of mountains to serve as guideways for diverting this Pokémon's course.  Golem live up on mountains. If there is a large earthquake, these Pokémon will come rolling down off the mountains en masse to the foothills below.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Ponyta'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Ponyta</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/077.png" alt="NotFound"/> 
+         <p>National id: 77</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d17276d341b41ee1fd</p></ br>
+           <p style='padding:3px'>Ponyta is very weak at birth. It can barely stand up. This Pokémon becomes stronger by stumbling and falling to keep up with its parent.  Ponyta is very weak at birth. It can barely stand up. This Pokémon becomes stronger by stumbling and falling to keep up with its parent.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Rapidash'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Rapidash</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/078.png" alt="NotFound"/> 
+         <p>National id: 78</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72cf7276d341b41ee1cc</p></ br>
+           <p style='padding:3px'>Rapidash usually can be seen casually cantering in the fields and plains. However, when this Pokémon turns serious, its fiery manes flare and blaze as it gallops its way up to 150 mph.  Rapidash usually can be seen casually cantering in the fields and plains. However, when this Pokémon turns serious, its fiery manes flare and blaze as it gallops its way up to 150 mph.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Slowpoke'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Slowpoke</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/079.png" alt="NotFound"/> 
+         <p>National id: 79</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d07276d341b41ee1e2</p></ br>
+           <p style='padding:3px'>Slowpoke uses its tail to catch prey by dipping it in water at the side of a river. However, this Pokémon often forgets what it's doing and often spends entire days just loafing at water's edge.  Slowpoke uses its tail to catch prey by dipping it in water at the side of a river. However, this Pokémon often forgets what it's doing and often spends entire days just loafing at water's edge.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Slowbro'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Slowbro</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/080.png" alt="NotFound"/> 
+         <p>National id: 80</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b17276d341b41ede66</p></ br>
+           <p style='padding:3px'>Slowbro's tail has a Shellder firmly attached with a bite. As a result, the tail can't be used for fishing anymore. This causes Slowbro to grudgingly swim and catch prey instead.  Slowbro's tail has a Shellder firmly attached with a bite. As a result, the tail can't be used for fishing anymore. This causes Slowbro to grudgingly swim and catch prey instead.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Magnemite'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Magnemite</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/081.png" alt="NotFound"/> 
+         <p>National id: 81</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41edebc</p></ br>
+           <p style='padding:3px'>Magnemite floats in the air by emitting electromagnetic waves from the units at its sides. These waves block gravity. This Pokémon becomes incapable of flight if its internal electrical supply is depleted.  Magnemite attaches itself to power lines to feed on electricity. If your house has a power outage, check your circuit breakers. You may find a large number of this Pokémon clinging to the breaker box.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Magneton'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Magneton</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/082.png" alt="NotFound"/> 
+         <p>National id: 82</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede87</p></ br>
+           <p style='padding:3px'>Magneton emits a powerful magnetic force that is fatal to electronics and precision instruments. Because of this, it is said that some towns warn people to keep this Pokémon inside a Poké Ball.  Magneton emits a powerful magnetic force that is fatal to mechanical devices. As a result, large cities sound sirens to warn citizens of large-scale outbreaks of this Pokémon.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Farfetchd'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Farfetchd</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/083.png" alt="NotFound"/> 
+         <p>National id: 83</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72d07276d341b41ee1ec</p></ br>
+           <p style='padding:3px'>Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.  Farfetch'd is always seen with a stalk from a plant of some sort. Apparently, there are good stalks and bad stalks. This Pokémon has been known to fight with others over stalks.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Doduo'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Doduo</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/084.png" alt="NotFound"/> 
+         <p>National id: 84</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72cf7276d341b41ee1d9</p></ br>
+           <p style='padding:3px'>Doduo's two heads contain completely identical brains. A scientific study reported that on rare occasions, there will be examples of this Pokémon possessing different sets of brains.  Doduo's two heads never sleep at the same time. Its two heads take turns sleeping, so one head can always keep watch for enemies while the other one sleeps.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Dodrio'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Dodrio</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/085.png" alt="NotFound"/> 
+         <p>National id: 85</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72cf7276d341b41ee1c3</p></ br>
+           <p style='padding:3px'>Apparently, the heads aren't the only parts of the body that Dodrio has three of. It has three sets of hearts and lungs as well, so it is capable of running long distances without rest.  Watch out if Dodrio's three heads are looking in three separate directions. It's a sure sign that it is on its guard. Don't go near this Pokémon if it's being wary—it may decide to peck you.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Seel'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Seel</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/086.png" alt="NotFound"/> 
+         <p>National id: 86</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b17276d341b41ede6f</p></ br>
+           <p style='padding:3px'>Seel hunts for prey in the frigid sea underneath sheets of ice. When it needs to breathe, it punches a hole through the ice with the sharply protruding section of its head.  Seel hunts for prey in the frigid sea underneath sheets of ice. When it needs to breathe, it punches a hole through the ice with the sharply protruding section of its head.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Dewgong'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Dewgong</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/087.png" alt="NotFound"/> 
+         <p>National id: 87</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41edecf</p></ br>
+           <p style='padding:3px'>Dewgong loves to snooze on bitterly cold ice. The sight of this Pokémon sleeping on a glacier was mistakenly thought to be a mermaid by a mariner long ago.  Dewgong loves to snooze on bitterly cold ice. The sight of this Pokémon sleeping on a glacier was mistakenly thought to be a mermaid by a mariner long ago.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Grimer'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Grimer</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/088.png" alt="NotFound"/> 
+         <p>National id: 88</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede8c</p></ br>
+           <p style='padding:3px'>Grimer emerged from the sludge that settled on a polluted seabed. This Pokémon loves anything filthy. It constantly leaks a horribly germ-infested fluid from all over its body.  Grimer's sludgy and rubbery body can be forced through any opening, however small it may be. This Pokémon enters sewer pipes to drink filthy wastewater.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Muk'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Muk</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/089.png" alt="NotFound"/> 
+         <p>National id: 89</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede90</p></ br>
+           <p style='padding:3px'>This Pokémon's favorite food is anything that is repugnantly filthy. In dirty towns where people think nothing of throwing away litter on the streets, Muk are certain to gather.  From Muk's body seeps a foul fluid that gives off a nose-bendingly horrible stench. Just one drop of this Pokémon's body fluid can turn a pool stagnant and rancid.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Shellder'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Shellder</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/090.png" alt="NotFound"/> 
+         <p>National id: 90</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b17276d341b41ede62</p></ br>
+           <p style='padding:3px'>At night, this Pokémon uses its broad tongue to burrow a hole in the seafloor sand and then sleep in it. While it is sleeping, Shellder closes its shell, but leaves its tongue hanging out.  At night, this Pokémon uses its broad tongue to burrow a hole in the seafloor sand and then sleep in it. While it is sleeping, Shellder closes its shell, but leaves its tongue hanging out.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Cloyster'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Cloyster</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/091.png" alt="NotFound"/> 
+         <p>National id: 91</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede93</p></ br>
+           <p style='padding:3px'>Cloyster is capable of swimming in the sea. It does so by swallowing water, then jetting it out toward the rear. This Pokémon shoots spikes from its shell using the same system.  Cloyster is capable of swimming in the sea. It does so by swallowing water, then jetting it out toward the rear. This Pokémon shoots spikes from its shell using the same system.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Gastly'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Gastly</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/092.png" alt="NotFound"/> 
+         <p>National id: 92</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede97</p></ br>
+           <p style='padding:3px'>Gastly is largely composed of gaseous matter. When exposed to a strong wind, the gaseous body quickly dwindles away. Groups of this Pokémon cluster under the eaves of houses to escape the ravages of wind.  Gastly is largely composed of gaseous matter. When exposed to a strong wind, the gaseous body quickly dwindles away. Groups of this Pokémon cluster under the eaves of houses to escape the ravages of wind.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Haunter'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Haunter</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/093.png" alt="NotFound"/> 
+         <p>National id: 93</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b37276d341b41edeb0</p></ br>
+           <p style='padding:3px'>Haunter is a dangerous Pokémon. If one beckons you while floating in darkness, you must never approach it. This Pokémon will try to lick you with its tongue and steal your life away.  Haunter is a dangerous Pokémon. If one beckons you while floating in darkness, you must never approach it. This Pokémon will try to lick you with its tongue and steal your life away.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Gengar'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Gengar</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/094.png" alt="NotFound"/> 
+         <p>National id: 94</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41edeca</p></ br>
+           <p style='padding:3px'>Sometimes, on a dark night, your shadow thrown by a streetlight will suddenly and startlingly overtake you. It is actually a Gengar running past you, pretending to be your shadow.  Sometimes, on a dark night, your shadow thrown by a streetlight will suddenly and startlingly overtake you. It is actually a Gengar running past you, pretending to be your shadow.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Onix'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Onix</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/095.png" alt="NotFound"/> 
+         <p>National id: 95</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41edec5</p></ br>
+           <p style='padding:3px'>Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother.  Onix has a magnet in its brain. It acts as a compass so that this Pokémon does not lose direction while it is tunneling. As it grows older, its body becomes increasingly rounder and smoother.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Drowzee'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Drowzee</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/096.png" alt="NotFound"/> 
+         <p>National id: 96</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede9c</p></ br>
+           <p style='padding:3px'>If your nose becomes itchy while you are sleeping, it's a sure sign that one of these Pokémon is standing above your pillow and trying to eat your dream through your nostrils.  If your nose becomes itchy while you are sleeping, it's a sure sign that one of these Pokémon is standing above your pillow and trying to eat your dream through your nostrils.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Hypno'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Hypno</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/097.png" alt="NotFound"/> 
+         <p>National id: 97</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf45</p></ br>
+           <p style='padding:3px'>Hypno holds a pendulum in its hand. The arcing movement and glitter of the pendulum lull the foe into a deep state of hypnosis. While this Pokémon searches for prey, it polishes the pendulum.  Hypno holds a pendulum in its hand. The arcing movement and glitter of the pendulum lull the foe into a deep state of hypnosis. While this Pokémon searches for prey, it polishes the pendulum.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Krabby'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Krabby</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/098.png" alt="NotFound"/> 
+         <p>National id: 98</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b27276d341b41ede7e</p></ br>
+           <p style='padding:3px'>Krabby live on beaches, burrowed inside holes dug into the sand. On sandy beaches with little in the way of food, these Pokémon can be seen squabbling with each other over territory.  Krabby live on beaches, burrowed inside holes dug into the sand. On sandy beaches with little in the way of food, these Pokémon can be seen squabbling with each other over territory.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Kingler'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Kingler</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/099.png" alt="NotFound"/> 
+         <p>National id: 99</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b37276d341b41edea4</p></ br>
+           <p style='padding:3px'>Kingler has an enormous, oversized claw. It waves this huge claw in the air to communicate with others. However, because the claw is so heavy, the Pokémon quickly tires.  Kingler has an enormous, oversized claw. It waves this huge claw in the air to communicate with others. However, because the claw is so heavy, the Pokémon quickly tires.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Voltorb'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Voltorb</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/100.png" alt="NotFound"/> 
+         <p>National id: 100</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b37276d341b41edea7</p></ br>
+           <p style='padding:3px'>Voltorb is extremely sensitive—it explodes at the slightest of shocks. It is rumored that it was first created when a Poké Ball was exposed to a powerful pulse of energy.  Voltorb was first sighted at a company that manufactures Poké Balls. The link between that sighting and the fact that this Pokémon looks very similar to a Poké Ball remains a mystery.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Electrode'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Electrode</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/101.png" alt="NotFound"/> 
+         <p>National id: 101</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41eded3</p></ br>
+           <p style='padding:3px'>One of Electrode's characteristics is its attraction to electricity. It is a problematical Pokémon that congregates mostly at electrical power plants to feed on electricity that has just been generated.  Electrode eats electricity in the atmosphere. On days when lightning strikes, you can see this Pokémon exploding all over the place from eating too much electricity.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Exeggcute'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Exeggcute</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/102.png" alt="NotFound"/> 
+         <p>National id: 102</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b37276d341b41edeab</p></ br>
+           <p style='padding:3px'>This Pokémon consists of six eggs that form a closely knit cluster. The six eggs attract each other and spin around. When cracks increasingly appear on the eggs, Exeggcute is close to evolution.  This Pokémon consists of six eggs that form a closely knit cluster. The six eggs attract each other and spin around. When cracks increasingly appear on the eggs, Exeggcute is close to evolution.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Exeggutor'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Exeggutor</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/103.png" alt="NotFound"/> 
+         <p>National id: 103</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41edec1</p></ br>
+           <p style='padding:3px'>Exeggutor originally came from the tropics. Its heads steadily grow larger from exposure to strong sunlight. It is said that when the heads fall off, they group together to form Exeggcute.  Exeggutor originally came from the tropics. Its heads steadily grow larger from exposure to strong sunlight. It is said that when the heads fall off, they group together to form Exeggcute.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Cubone'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Cubone</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/104.png" alt="NotFound"/> 
+         <p>National id: 104</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41eded6</p></ br>
+           <p style='padding:3px'>Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull the Pokémon wears are made by the tears it sheds.  Cubone pines for the mother it will never see again. Seeing a likeness of its mother in the full moon, it cries. The stains on the skull the Pokémon wears are made by the tears it sheds.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Marowak'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Marowak</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/105.png" alt="NotFound"/> 
+         <p>National id: 105</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b37276d341b41edeb9</p></ br>
+           <p style='padding:3px'>Marowak is the evolved form of a Cubone that has overcome its sadness at the loss of its mother and grown tough. This Pokémon's tempered and hardened spirit is not easily broken.  Marowak is the evolved form of a Cubone that has overcome its sadness at the loss of its mother and grown tough. This Pokémon's tempered and hardened spirit is not easily broken.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Hitmonlee'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Hitmonlee</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/106.png" alt="NotFound"/> 
+         <p>National id: 106</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b77276d341b41edf17</p></ br>
+           <p style='padding:3px'>Hitmonlee's legs freely contract and stretch. Using these springlike legs, it bowls over foes with devastating kicks. After battle, it rubs down its legs and loosens the muscles to overcome fatigue.  Hitmonlee's legs freely contract and stretch. Using these springlike legs, it bowls over foes with devastating kicks. After battle, it rubs down its legs and loosens the muscles to overcome fatigue.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Hitmonchan'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Hitmonchan</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/107.png" alt="NotFound"/> 
+         <p>National id: 107</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edeef</p></ br>
+           <p style='padding:3px'>Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. This Pokémon has an indomitable spirit and will never give up in the face of adversity.  Hitmonchan is said to possess the spirit of a boxer who had been working toward a world championship. This Pokémon has an indomitable spirit and will never give up in the face of adversity.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Lickitung'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Lickitung</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/108.png" alt="NotFound"/> 
+         <p>National id: 108</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b37276d341b41edeb5</p></ br>
+           <p style='padding:3px'>Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.  Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Koffing'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Koffing</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/109.png" alt="NotFound"/> 
+         <p>National id: 109</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b47276d341b41ededa</p></ br>
+           <p style='padding:3px'>Koffing embodies toxic substances. It mixes the toxins with raw garbage to set off a chemical reaction that results in a terribly powerful poison gas. The higher the temperature, the more gas is concocted by this Pokémon.  If Koffing becomes agitated, it raises the toxicity of its internal gases and jets them out from all over its body. This Pokémon may also overinflate its round body, then explode.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Weezing'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Weezing</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/110.png" alt="NotFound"/> 
+         <p>National id: 110</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b77276d341b41edf1a</p></ br>
+           <p style='padding:3px'>Weezing alternately shrinks and inflates its twin bodies to mix together toxic gases inside. The more the gases are mixed, the more powerful the toxins become. The Pokémon also becomes more putrid.  Weezing loves the gases given off by rotted kitchen garbage. This Pokémon will find a dirty, unkempt house and make it its home. At night, when the people in the house are asleep, it will go through the trash.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Rhyhorn'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Rhyhorn</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/111.png" alt="NotFound"/> 
+         <p>National id: 111</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edee6</p></ br>
+           <p style='padding:3px'>Rhyhorn's brain is very small. It is so dense, while on a run it forgets why it started running in the first place. It apparently remembers sometimes if it demolishes something.  Rhyhorn runs in a straight line, smashing everything in its path. It is not bothered even if it rushes headlong into a block of steel. This Pokémon may feel some pain from the collision the next day, however.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Rhydon'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Rhydon</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/112.png" alt="NotFound"/> 
+         <p>National id: 112</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edf07</p></ br>
+           <p style='padding:3px'>Rhydon has a horn that serves as a drill. It is used for destroying rocks and boulders. This Pokémon occasionally rams into streams of magma, but the armor-like hide prevents it from feeling the heat.  Rhydon's horn can crush even uncut diamonds. One sweeping blow of its tail can topple a building. This Pokémon's hide is extremely tough. Even direct cannon hits don't leave a scratch.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Chansey'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Chansey</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/113.png" alt="NotFound"/> 
+         <p>National id: 113</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b97276d341b41edf4f</p></ br>
+           <p style='padding:3px'>Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite.  Chansey lays nutritionally excellent eggs on an everyday basis. The eggs are so delicious, they are easily and eagerly devoured by even those people who have lost their appetite.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Tangela'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Tangela</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/114.png" alt="NotFound"/> 
+         <p>National id: 114</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf3d</p></ br>
+           <p style='padding:3px'>Tangela's vines snap off easily if they are grabbed. This happens without pain, allowing it to make a quick getaway. The lost vines are replaced by newly grown vines the very next day.  Tangela's vines snap off easily if they are grabbed. This happens without pain, allowing it to make a quick getaway. The lost vines are replaced by newly grown vines the very next day.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Kangaskhan'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Kangaskhan</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/115.png" alt="NotFound"/> 
+         <p>National id: 115</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b77276d341b41edf28</p></ br>
+           <p style='padding:3px'>If you come across a young Kangaskhan playing by itself, you must never disturb it or attempt to catch it. The baby Pokémon's parent is sure to be in the area, and it will become violently enraged at you.  If you come across a young Kangaskhan playing by itself, you must never disturb it or attempt to catch it. The baby Pokémon's parent is sure to be in the area, and it will become violently enraged at you.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Horsea'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Horsea</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/116.png" alt="NotFound"/> 
+         <p>National id: 116</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edf0f</p></ br>
+           <p style='padding:3px'>If Horsea senses danger, it will reflexively spray a dense black ink from its mouth and try to escape. This Pokémon swims by cleverly flapping the fin on its back.  Horsea eats small insects and moss off of rocks. If the ocean current turns fast, this Pokémon anchors itself by wrapping its tail around rocks or coral to prevent being washed away.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Seadra'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Seadra</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/117.png" alt="NotFound"/> 
+         <p>National id: 117</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf2c</p></ br>
+           <p style='padding:3px'>Seadra generates whirlpools by spinning its body. The whirlpools are strong enough to swallow even fishing boats. This Pokémon weakens prey with these currents, then swallows it whole.  Seadra sleeps after wriggling itself between the branches of coral. Those trying to harvest coral are occasionally stung by this Pokémon's poison barbs if they fail to notice it.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Goldeen'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Goldeen</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/118.png" alt="NotFound"/> 
+         <p>National id: 118</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b77276d341b41edf1d</p></ br>
+           <p style='padding:3px'>Goldeen loves swimming wild and free in rivers and ponds. If one of these Pokémon is placed in an aquarium, it will shatter even the thickest glass with one ram of its horn and make its escape.  Goldeen is a very beautiful Pokémon with fins that billow elegantly in water. However, don't let your guard down around this Pokémon—it could ram you powerfully with its horn.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Seaking'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Seaking</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/119.png" alt="NotFound"/> 
+         <p>National id: 119</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edf0c</p></ br>
+           <p style='padding:3px'>Seaking is very protective of its eggs. The male and female will take turns patrolling around their nest and eggs. The guarding of eggs by these Pokémon goes on for over a month.  In the autumn, Seaking males can be seen performing courtship dances in riverbeds to woo females. During this season, this Pokémon's body coloration is at its most beautiful.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Staryu'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Staryu</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/120.png" alt="NotFound"/> 
+         <p>National id: 120</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edede</p></ br>
+           <p style='padding:3px'>Staryu apparently communicates with the stars in the night sky by flashing the red core at the center of its body. If parts of its body are torn, this Pokémon simply regenerates the missing pieces and limbs.  Staryu's center section has an organ called the core that shines bright red. If you go to a beach toward the end of summer, the glowing cores of these Pokémon look like the stars in the sky.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Starmie'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Starmie</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/121.png" alt="NotFound"/> 
+         <p>National id: 121</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edf13</p></ br>
+           <p style='padding:3px'>Starmie swims through water by spinning its star-shaped body as if it were a propeller on a ship. The core at the center of this Pokémon's body glows in seven colors.  Starmie's center section—the core—glows brightly in seven colors. Because of its luminous nature, this Pokémon has been given the nickname “the gem of the sea."</p>
+       </div>
+     </div>
+<div class="pokemon" id='Mr-mime'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Mr-mime</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/122.png" alt="NotFound"/> 
+         <p>National id: 122</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b97276d341b41edf48</p></ br>
+           <p style='padding:3px'>Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists. Once the watchers are convinced, the unseeable thing exists as if it were real.  Mr. Mime is a master of pantomime. Its gestures and motions convince watchers that something unseeable actually exists. Once the watchers are convinced, the unseeable thing exists as if it were real.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Scyther'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Scyther</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/123.png" alt="NotFound"/> 
+         <p>National id: 123</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edef7</p></ br>
+           <p style='padding:3px'>Scyther is blindingly fast. Its blazing speed enhances the effectiveness of the twin scythes on its forearms. This Pokémon's scythes are so effective, they can slice through thick logs in one wicked stroke.  Scyther is blindingly fast. Its blazing speed enhances the effectiveness of the twin scythes on its forearms. This Pokémon's scythes are so effective, they can slice through thick logs in one wicked stroke.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Jynx'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Jynx</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/124.png" alt="NotFound"/> 
+         <p>National id: 124</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edee2</p></ br>
+           <p style='padding:3px'>Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.  Jynx walks rhythmically, swaying and shaking its hips as if it were dancing. Its motions are so bouncingly alluring, people seeing it are compelled to shake their hips without giving any thought to what they are doing.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Electabuzz'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Electabuzz</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/125.png" alt="NotFound"/> 
+         <p>National id: 125</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edf03</p></ br>
+           <p style='padding:3px'>When a storm arrives, gangs of this Pokémon compete with each other to scale heights that are likely to be stricken by lightning bolts. Some towns use Electabuzz in place of lightning rods.  When a storm arrives, gangs of this Pokémon compete with each other to scale heights that are likely to be stricken by lightning bolts. Some towns use Electabuzz in place of lightning rods.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Magmar'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Magmar</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/126.png" alt="NotFound"/> 
+         <p>National id: 126</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf39</p></ br>
+           <p style='padding:3px'>In battle, Magmar blows out intensely hot flames from all over its body to intimidate its opponent. This Pokémon's fiery bursts create heat waves that ignite grass and trees in its surroundings.  In battle, Magmar blows out intensely hot flames from all over its body to intimidate its opponent. This Pokémon's fiery bursts create heat waves that ignite grass and trees in its surroundings.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Pinsir'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Pinsir</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/127.png" alt="NotFound"/> 
+         <p>National id: 127</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf35</p></ br>
+           <p style='padding:3px'>Pinsir has a pair of massive horns. Protruding from the surface of these horns are thorns. These thorns are driven deeply into the foe's body when the pincer closes, making it tough for the foe to escape.  Pinsir is astoundingly strong. It can grip a foe weighing twice its weight in its horns and easily lift it. This Pokémon's movements turn sluggish in cold places.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Tauros'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Tauros</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/128.png" alt="NotFound"/> 
+         <p>National id: 128</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edefc</p></ br>
+           <p style='padding:3px'>This Pokémon is not satisfied unless it is rampaging at all times. If there is no opponent for Tauros to battle, it will charge at thick trees and knock them down to calm itself.  This Pokémon is not satisfied unless it is rampaging at all times. If there is no opponent for Tauros to battle, it will charge at thick trees and knock them down to calm itself.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Magikarp'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Magikarp</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/129.png" alt="NotFound"/> 
+         <p>National id: 129</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edeeb</p></ br>
+           <p style='padding:3px'>Magikarp is virtually useless in battle as it can only splash around. As a result, it is considered to be weak. However, it is actually a very hardy Pokémon that can survive in any body of water no matter how polluted it is.  Magikarp is a pathetic excuse for a Pokémon that is only capable of flopping and splashing. This behavior prompted scientists to undertake research into it.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Gyarados'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Gyarados</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/130.png" alt="NotFound"/> 
+         <p>National id: 130</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b57276d341b41edef2</p></ br>
+           <p style='padding:3px'>Once Gyarados goes on a rampage, its ferociously violent blood doesn't calm until it has burned everything down. There are records of this Pokémon's rampages lasting a whole month.  When Magikarp evolves into Gyarados, its brain cells undergo a structural transformation. It is said that this transformation is to blame for this Pokémon's wildly violent nature.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Lapras'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Lapras</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/131.png" alt="NotFound"/> 
+         <p>National id: 131</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b67276d341b41edeff</p></ br>
+           <p style='padding:3px'>People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.  People have driven Lapras almost to the point of extinction. In the evenings, this Pokémon is said to sing plaintively as it seeks what few others of its kind still remain.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Ditto'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Ditto</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/132.png" alt="NotFound"/> 
+         <p>National id: 132</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b97276d341b41edf4c</p></ br>
+           <p style='padding:3px'>Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.  Ditto rearranges its cell structure to transform itself into other shapes. However, if it tries to transform itself into something by relying on its memory, this Pokémon manages to get details wrong.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Eevee'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Eevee</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/133.png" alt="NotFound"/> 
+         <p>National id: 133</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bb7276d341b41edf8e</p></ br>
+           <p style='padding:3px'>Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.  Eevee has an unstable genetic makeup that suddenly mutates due to the environment in which it lives. Radiation from various stones causes this Pokémon to evolve.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Vaporeon'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Vaporeon</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/134.png" alt="NotFound"/> 
+         <p>National id: 134</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ba7276d341b41edf61</p></ br>
+           <p style='padding:3px'>Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to freely control water.  Vaporeon underwent a spontaneous mutation and grew fins and gills that allow it to live underwater. This Pokémon has the ability to freely control water.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Jolteon'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Jolteon</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/135.png" alt="NotFound"/> 
+         <p>National id: 135</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b77276d341b41edf21</p></ br>
+           <p style='padding:3px'>Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.  Jolteon's cells generate a low level of electricity. This power is amplified by the static electricity of its fur, enabling the Pokémon to drop thunderbolts. The bristling fur is made of electrically charged needles.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Flareon'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Flareon</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/136.png" alt="NotFound"/> 
+         <p>National id: 136</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bd7276d341b41edfbd</p></ br>
+           <p style='padding:3px'>Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot. This Pokémon's body temperature can rise to a maximum of 1,650 degrees Fahrenheit.  Flareon's fluffy fur has a functional purpose—it releases heat into the air so that its body does not get excessively hot. This Pokémon's body temperature can rise to a maximum of 1,650 degrees Fahrenheit.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Porygon'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Porygon</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/137.png" alt="NotFound"/> 
+         <p>National id: 137</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf41</p></ br>
+           <p style='padding:3px'>Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy protected so it cannot be duplicated by copying.  Porygon is capable of reverting itself entirely back to program data and entering cyberspace. This Pokémon is copy protected so it cannot be duplicated by copying.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Omanyte'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Omanyte</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/138.png" alt="NotFound"/> 
+         <p>National id: 138</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b87276d341b41edf30</p></ br>
+           <p style='padding:3px'>Omanyte is one of the ancient and long-since-extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws itself inside its hard shell.  Omanyte is one of the ancient and long-since-extinct Pokémon that have been regenerated from fossils by people. If attacked by an enemy, it withdraws itself inside its hard shell.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Omastar'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Omastar</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/139.png" alt="NotFound"/> 
+         <p>National id: 139</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ba7276d341b41edf67</p></ br>
+           <p style='padding:3px'>Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, causing its movements to become too slow and ponderous.  Omastar uses its tentacles to capture its prey. It is believed to have become extinct because its shell grew too large and heavy, causing its movements to become too slow and ponderous.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Kabuto'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Kabuto</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/140.png" alt="NotFound"/> 
+         <p>National id: 140</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bc7276d341b41edf9d</p></ br>
+           <p style='padding:3px'>Kabuto is a Pokémon that has been regenerated from a fossil. However, in extremely rare cases, living examples have been discovered. The Pokémon has not changed at all for 300 million years.  Kabuto is a Pokémon that has been regenerated from a fossil. However, in extremely rare cases, living examples have been discovered. The Pokémon has not changed at all for 300 million years.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Kabutops'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Kabutops</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/141.png" alt="NotFound"/> 
+         <p>National id: 141</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b77276d341b41edf24</p></ br>
+           <p style='padding:3px'>Kabutops swam underwater to hunt for its prey in ancient times. The Pokémon was apparently evolving from being a water dweller to living on land as evident from the beginnings of change in its gills and legs.  Kabutops swam underwater to hunt for its prey in ancient times. The Pokémon was apparently evolving from being a water dweller to living on land as evident from the beginnings of change in its gills and legs.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Aerodactyl'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Aerodactyl</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/142.png" alt="NotFound"/> 
+         <p>National id: 142</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b97276d341b41edf53</p></ br>
+           <p style='padding:3px'>Aerodactyl is a Pokémon from the age of dinosaurs. It was regenerated from genetic material extracted from amber. It is imagined to have been the king of the skies in ancient times.  Aerodactyl is a Pokémon from the age of dinosaurs. It was regenerated from genetic material extracted from amber. It is imagined to have been the king of the skies in ancient times.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Snorlax'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Snorlax</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/143.png" alt="NotFound"/> 
+         <p>National id: 143</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bb7276d341b41edf80</p></ br>
+           <p style='padding:3px'>Snorlax's typical day consists of nothing more than eating and sleeping. It is such a docile Pokémon that there are children who use its expansive belly as a place to play.  Snorlax's typical day consists of nothing more than eating and sleeping. It is such a docile Pokémon that there are children who use its expansive belly as a place to play.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Articuno'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Articuno</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/144.png" alt="NotFound"/> 
+         <p>National id: 144</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ba7276d341b41edf74</p></ br>
+           <p style='padding:3px'>Articuno is a legendary bird Pokémon that can control ice. The flapping of its wings chills the air. As a result, it is said that when this Pokémon flies, snow will fall.  Articuno is a legendary bird Pokémon that can control ice. The flapping of its wings chills the air. As a result, it is said that when this Pokémon flies, snow will fall.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Zapdos'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Zapdos</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/145.png" alt="NotFound"/> 
+         <p>National id: 145</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bb7276d341b41edf78</p></ br>
+           <p style='padding:3px'>Zapdos is a legendary bird Pokémon that has the ability to control electricity. It usually lives in thunderclouds. The Pokémon gains power if it is stricken by lightning bolts.  Zapdos is a legendary bird Pokémon that has the ability to control electricity. It usually lives in thunderclouds. The Pokémon gains power if it is stricken by lightning bolts.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Moltres'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Moltres</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/146.png" alt="NotFound"/> 
+         <p>National id: 146</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b97276d341b41edf58</p></ br>
+           <p style='padding:3px'>Moltres is a legendary bird Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.  Moltres is a legendary bird Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Dratini'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Dratini</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/147.png" alt="NotFound"/> 
+         <p>National id: 147</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bd7276d341b41edfb5</p></ br>
+           <p style='padding:3px'>Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels.  Dratini continually molts and sloughs off its old skin. It does so because the life energy within its body steadily builds to reach uncontrollable levels.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Dragonair'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Dragonair</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/148.png" alt="NotFound"/> 
+         <p>National id: 148</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72c07276d341b41ee019</p></ br>
+           <p style='padding:3px'>Dragonair stores an enormous amount of energy inside its body. It is said to alter weather conditions in its vicinity by discharging energy from the crystals on its neck and tail.  Dragonair stores an enormous amount of energy inside its body. It is said to alter weather conditions in its vicinity by discharging energy from the crystals on its neck and tail.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Dragonite'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Dragonite</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/149.png" alt="NotFound"/> 
+         <p>National id: 149</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72bc7276d341b41edf99</p></ br>
+           <p style='padding:3px'>Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.  Dragonite is capable of circling the globe in just 16 hours. It is a kindhearted Pokémon that leads lost and foundering ships in a storm to the safety of land.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Mewtwo'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Mewtwo</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/150.png" alt="NotFound"/> 
+         <p>National id: 150</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72b97276d341b41edf5c</p></ br>
+           <p style='padding:3px'>Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.  Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.</p>
+       </div>
+     </div>
+<div class="pokemon" id='Mew'>
+       <div class="flip-card-front pokemonContainer">
+         <p style='font-weight:bold'>Mew</p> 
+           <img class="pokemonImage" src="http://assets22.pokemon.com/assets/cms2/img/pokedex/full/151.png" alt="NotFound"/> 
+         <p>National id: 151</p>
+       </div>
+       <div class="flip-card-back">
+         <p style='text-align:center;font-weight:bold'>Id : 557a72ba7276d341b41edf64</p></ br>
+           <p style='padding:3px'>Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.  Mew is said to possess the genetic composition of all Pokémon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people.</p>
+       </div>
+     </div>
+
+    </div>
+  </body>
+</html>
